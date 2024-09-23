@@ -30,3 +30,6 @@
 *.hex
 *.bin
 *.srec
+
+cmake-build-debug
+.DS_Store

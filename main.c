@@ -16,20 +16,24 @@ void led_green_init() {
     SIM->SCGC5 |= 0x1000u;
     PORTD->PCR[5] |= 0x100u;
     GPIOD->PDDR |= 0x20u;
-    GPIOD->PSOR;;
+    GPIOD->PSOR |= 1 << 5;
 }
 
 void led_green_toggle() {
-    //
+    GPIOD->PTOR |= 1 << 5;
 }
 
 // LED_RED = PTE29
 void led_red_init() {
-    //
+    SIM->COPC = 0;
+    SIM->SCGC5 |= 0x2000u;
+    PORTD->PCR[5] |= 0x100u;
+    GPIOD->PDDR |= 1 << 29;
+    GPIOD->PSOR |= 1 << 29;
 }
 
 void led_red_toggle(void) {
-    //
+    GPIOD->PTOR |= 1 << 29;
 }
 
 int main(void) {
