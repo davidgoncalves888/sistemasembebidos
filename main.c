@@ -27,13 +27,13 @@ void led_green_toggle() {
 void led_red_init() {
     SIM->COPC = 0;
     SIM->SCGC5 |= 0x2000u;
-    PORTD->PCR[5] |= 0x100u;
-    GPIOD->PDDR |= 1 << 29;
-    GPIOD->PSOR |= 1 << 29;
+    PORTE->PCR[29] |= 0x100u;
+    GPIOE->PDDR |= 1 << 29;
+    GPIOE->PSOR |= 1 << 29;
 }
 
-void led_red_toggle(void) {
-    GPIOD->PTOR |= 1 << 29;
+void led_red_toggle() {
+    GPIOE->PTOR |= 1 << 29;
 }
 
 int main(void) {
@@ -45,6 +45,4 @@ int main(void) {
         delay();
         led_red_toggle();
     }
-
-    return 0;
 }
