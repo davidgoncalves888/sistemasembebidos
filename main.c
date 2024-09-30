@@ -17,7 +17,14 @@ void led_green_toggle() {
     GPIOD->PTOR |= 1 << 5;
 }
 
-// LED_RED = PTE29
+void led_green_on() {
+    GPIOD->PCOR |= 1 << 5;
+}
+
+void led_green_off() {
+    GPIOD->PSOR |= 1 << 5;
+}
+
 void led_red_init() {
     SIM->SCGC5 |= SIM_SCGC5_PORTE_MASK;
     PORTE->PCR[29] |= PORT_PCR_MUX(1);
@@ -27,6 +34,14 @@ void led_red_init() {
 
 void led_red_toggle() {
     GPIOE->PTOR |= 1 << 29;
+}
+
+void led_red_on() {
+    GPIOE->PCOR |= 1 << 29;
+}
+
+void led_red_off() {
+    GPIOE->PSOR |= 1 << 29;
 }
 
 void switch1_init() {
@@ -56,14 +71,46 @@ int main() {
     switch1_init();
     switch3_init();
 
-    while (1) { ;
+    int estado = 0;
+    int estado_anterior = -1;
+    while (1) {
         if (sw1_is_pressed()) {
-            led_green_toggle();
+            estado += 1;
+            estado %= 4;
             while (sw1_is_pressed());
         }
         if (sw3_is_pressed()) {
-            led_red_toggle();
+            if (estado == 0) {
+                estado = 1;
+            } else if (estado == 1) {
+                estado = 0;
+            } else if (estado == 2) {
+                estado = 3;
+            } else {
+                estado = 2;
+            }
             while (sw3_is_pressed());
+        }
+        if (estado != estado_anterior) {
+            estado_anterior = estado;
+            switch (estado) {
+                case 0:
+                    led_green_off();
+                    led_red_on();
+                    break;
+                case 1:
+                    led_green_on();
+                    led_red_off();
+                    break;
+                case 2:
+                    led_green_on();
+                    led_red_on();
+                    break;
+                case 3:
+                    led_green_off();
+                    led_red_off();
+                    break;
+            }
         }
     }
 }
