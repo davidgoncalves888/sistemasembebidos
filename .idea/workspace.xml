@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="862a57c2-7b8a-402c-8a1a-e04363edad4d" name="Changes" comment="Práctica 2">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drivers/board.c" beforeDir="false" afterPath="$PROJECT_DIR$/drivers/board.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drivers/board.h" beforeDir="false" afterPath="$PROJECT_DIR$/drivers/board.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drivers/clock_config.c" beforeDir="false" afterPath="$PROJECT_DIR$/drivers/clock_config.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drivers/clock_config.h" beforeDir="false" afterPath="$PROJECT_DIR$/drivers/clock_config.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drivers/pin_mux.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drivers/pin_mux.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello_world.c" beforeDir="false" afterPath="$PROJECT_DIR$/hello_world.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/led_blinky.c" beforeDir="false" afterPath="$PROJECT_DIR$/led_blinky.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefile" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="davidgoncalves888 &lt;david.goncalves.alvarez@udc.es&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;davidgoncalves888&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:davidgoncalves888/sistemasembebidos.git&quot;,
+    &quot;accountId&quot;: &quot;cb4c2fcd-e862-48f2-a395-d90586209b2d&quot;
+  }
+}</component>
+  <component name="ProjectApplicationVersion">
+    <option name="ide" value="CLion" />
+    <option name="majorVersion" value="2024" />
+    <option name="minorVersion" value="2.1" />
+    <option name="productBranch" value="Classic" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2m9tNTTfc7qA8aumOLvESqjh13A" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Makefile Target.FRDM-KL46Z4.executor": "Run",
+    "Makefile Target.clean.executor": "Run",
+    "Makefile Target.flash.executor": "Run",
+    "Makefile Target.flash_hello.executor": "Run",
+    "Makefile Target.flash_led.executor": "Run",
+    "Makefile Target.main.elf.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "Práctica2",
+    "last_opened_file_path": "/Users/davidgoncalvesalvarez/Documents/Uni/7-SE/sistemasembebidos",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "ml.llm.LLMConfigurable",
+    "structure.view.defaults.are.configured": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Makefile Target.flash_led">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FRDM-KL46Z4" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile">
+      <makefile filename="$PROJECT_DIR$/makefile" target="" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <configuration name="clean" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/makefile" target="clean" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <configuration name="flash" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/makefile" target="flash" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <configuration name="flash_hello" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/makefile" target="flash_hello" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <configuration name="flash_led" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/makefile" target="flash_led" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <configuration name="main.elf" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/makefile" target="main.elf" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Makefile Target.FRDM-KL46Z4" />
+      <item itemvalue="Makefile Target.clean" />
+      <item itemvalue="Makefile Target.flash_hello" />
+      <item itemvalue="Makefile Target.flash_led" />
+      <item itemvalue="Makefile Target.flash" />
+      <item itemvalue="Makefile Target.main.elf" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Makefile Target.flash_led" />
+        <item itemvalue="Makefile Target.flash_hello" />
+        <item itemvalue="Makefile Target.main.elf" />
+        <item itemvalue="Makefile Target.flash" />
+        <item itemvalue="Makefile Target.clean" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="862a57c2-7b8a-402c-8a1a-e04363edad4d" name="Changes" comment="" />
+      <created>1726500580039</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1726500580039</updated>
+      <workItem from="1726500581551" duration="2037000" />
+      <workItem from="1727099587977" duration="5534000" />
+      <workItem from="1727613426539" duration="19641000" />
+      <workItem from="1728488663272" duration="3001000" />
+      <workItem from="1728911858837" duration="8154000" />
+      <workItem from="1729025200902" duration="487000" />
+      <workItem from="1729271531873" duration="1262000" />
+    </task>
+    <task id="LOCAL-00001" summary="Led debería encender">
+      <option name="closed" value="true" />
+      <created>1726500915449</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1726500915449</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Led parpadea">
+      <option name="closed" value="true" />
+      <created>1727099638733</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1727099638733</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Led rojo parpadea">
+      <option name="closed" value="true" />
+      <created>1727638179267</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1727638179267</updated>
+    </task>
+    <task id="LOCAL-00004" summary="compile and push">
+      <option name="closed" value="true" />
+      <created>1727638198139</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1727638198139</updated>
+    </task>
+    <task id="LOCAL-00005" summary="botones controlan leds">
+      <option name="closed" value="true" />
+      <created>1727642236033</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1727642236033</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Práctica 1">
+      <option name="closed" value="true" />
+      <created>1727714102386</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1727714102386</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Práctica 1">
+      <option name="closed" value="true" />
+      <created>1727714415790</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1727714415790</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Práctica 2">
+      <option name="closed" value="true" />
+      <created>1729024922900</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1729024922900</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticReloadCMake value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="main" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="Práctica1" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="Led debería encender" />
+    <MESSAGE value="Led parpadea" />
+    <MESSAGE value="Led rojo parpadea" />
+    <MESSAGE value="compile and push" />
+    <MESSAGE value="botones controlan leds" />
+    <MESSAGE value="Práctica 1" />
+    <MESSAGE value="Práctica 2" />
+    <MESSAGE value="squash! Práctica 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="squash! Práctica 2" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
