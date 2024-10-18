@@ -7,10 +7,12 @@ COMMON_SRC = startup.c \
              $(wildcard ./drivers/*.c)
 
 SRC_LED = $(COMMON_SRC) \
+          pin_mux_led.c \
           led_blinky.c
 
 SRC_HELLO = $(COMMON_SRC) \
-            hello_world.c
+           pin_mux_hello.c \
+           hello_world.c
 
 OBJ_LED = $(SRC_LED:%.c=%.o)
 OBJ_HELLO = $(SRC_HELLO:%.c=%.o)
