@@ -4,8 +4,6 @@
 
 #define WEAK __attribute__ ((weak))
 
-#include "MKL46Z4.h"
-
 void WEAK  ResetHandler(void);
 void WEAK  NMIIntHandler(void);
 void WEAK  HardFaultIntHandler(void);
@@ -163,7 +161,6 @@ void Default_ResetHandler(void)
     }
 
   /* call the application's entry point */
-    SIM->COPC = 0;
   main();
 }
 
