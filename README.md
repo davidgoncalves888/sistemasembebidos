@@ -24,5 +24,6 @@ Buscando en internet he visto que hay varios algoritmos para invertir los bits, 
   El primero es el más conveniente en situaciones de poca memoria, aunque puede ser un poco más lento que el segundo,
   que en caso de tener que hacer esta operación muchas veces puede ser mejor. Aunque algunas arquitecturas incluyen esta
   función de base, como algunos ARM (RBIT, y en RISC-V con la extension B (brev8).
-  En este caso veo mejor el primer algoritmo por la poca memoria que usa, más apto si fuera implementado en un aplaca
-  como la de prácticas. El código está en reverse_int.s.
+
+En este caso veo mejor el primer algoritmo por la poca memoria que usa, más apto si fuera implementado en un aplaca
+como la de prácticas. El código está en reverse_int.s.
