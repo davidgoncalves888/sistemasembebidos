@@ -325,15 +325,37 @@ void lcd_set(uint8_t value, uint8_t digit) {
 //
 // Displays a 4 Digit number in decimal
 //
+
+int My_Div2(int a, int b) {
+    int c = 0;
+    asm(
+            ".syntax unified\n\t"
+            "movs r2, %[DIVIDENDO]\n\t"
+            "movs r3, %[DIVISOR]\n\t"
+            "movs %[COCIENTE], #0\n\t"
+            "loop_start:\n\t"
+            "cmp r2, r3\n\t"
+            "blt loop_end\n\t"
+            "subs r2, r2, r3\n\t"
+            "adds %[COCIENTE], %[COCIENTE], #1\n\t"
+            "b loop_start\n\t"
+            "loop_end:\n\t"
+            : [COCIENTE] "=r"(c)
+    : [DIVIDENDO] "r"(a), [DIVISOR] "r"(b)
+    : "r2", "r3"
+    );
+    return c;
+}
+
 void lcd_display_dec(uint16_t value) {
     if (value > 9999) {
         //Display "Err" if value is greater than 4 digits
         lcd_display_error(0x10);
     } else {
-        lcd_set(value / 1000, 1);
-        lcd_set((value - (value / 1000) * 1000) / 100, 2);
-        lcd_set((value - (value / 100) * 100) / 10, 3);
-        lcd_set(value - (value / 10) * 10, 4);
+        lcd_set(My_Div2(value, 1000), 1);
+        lcd_set(My_Div2((value - (My_Div2(value, 1000)) * 1000), 100), 2);
+        lcd_set(My_Div2((value - (My_Div2(value, 1000)) * 100), 10), 3);
+        lcd_set(value - (My_Div2(value, 1000)) * 10, 4);
     }
 }
 

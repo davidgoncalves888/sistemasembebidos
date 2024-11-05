@@ -1,31 +1,57 @@
 CC = arm-none-eabi-gcc
 
-TARGET_MAIN = main.elf
+# Targets for each compilation
+TARGET_EMBEBIDO = emb.elf
+TARGET_ENSAMBLAR = ens.elf
 
-COMMON_SRC = startup.c \
-             $(wildcard ./drivers/*.c)
+# Common source files
+COMMON_SRC = startup.c main.c
 
-SRC_MAIN = $(COMMON_SRC) \
-          main.c
+# Source files and objects for each driver version
+SRC_EMBEBIDO = $(COMMON_SRC) $(wildcard ./drivers_EMB/*.c)
+SRC_ENSAMBLAR = $(COMMON_SRC) $(wildcard ./drivers_ENS/*.c)
 
-OBJ_MAIN = $(SRC_MAIN:%.c=%.o)
+OBJ_EMBEBIDO = $(SRC_EMBEBIDO:%.c=%.o)
+OBJ_ENSAMBLAR = $(SRC_ENSAMBLAR:%.c=%.o) ./drivers_ENS/My_Div2.o
 
-INCLUDES = -I ./includes -I ./drivers
+# Includes for each driver version
+INCLUDES = -I ./includes
+INCLUDES_EMB = -I ./includes -I ./drivers_EMB
+INCLUDES_ENS = -I ./includes -I ./drivers_ENS
+
+# Common compilation flags
 CPU = -DCPU_MKL46Z256VLL4
+CFLAGS = -O0 -g3 -Wall -mthumb -mcpu=cortex-m0plus $(CPU) -c
+LDFLAGS = -O0 -g3 -Wall -mthumb -mcpu=cortex-m0plus -specs=nano.specs -Wl,--gc-sections,
 
-CFLAGS = -O0 -g3 -Wall -mthumb -mcpu=cortex-m0plus $(INCLUDES) $(CPU) -c
-LDFLAGS = -O0 -g3  -Wall -mthumb -mcpu=cortex-m0plus -specs=nano.specs -Wl,--gc-sections,
-
-OPENOCD_CMD = openocd -f openocd.cfg -c "program main.elf verify reset exit"
-
+# Rules for generating .o files for each driver version
 %.o: %.c
-	$(CC) $(CFLAGS) -o $@ $<
+	$(CC) $(CFLAGS) $(INCLUDES) -o $@ $<
 
-$(TARGET_MAIN): $(OBJ_MAIN)
-	$(CC) $(LDFLAGS)-Map=$(@:.elf=.map) -Tlink.ld $(OBJ_MAIN) -o $(TARGET_MAIN)
+drivers_EMB/%.o: drivers_EMB/%.c
+	$(CC) $(CFLAGS) $(INCLUDES_EMB) -o $@ $<
 
-flash_main: $(TARGET_MAIN)
+drivers_ENS/%.o: drivers_ENS/%.c
+	$(CC) $(CFLAGS) $(INCLUDES_ENS) -o $@ $<
+
+# Rule to assemble My_Div2.s to My_Div2.o
+./drivers_ENS/My_Div2.o: ./drivers_ENS/My_Div2.s
+	arm-none-eabi-as -mthumb -mcpu=cortex-m0plus -o $@ $<
+
+# Linking rules for each target
+$(TARGET_EMBEBIDO): $(OBJ_EMBEBIDO)
+	$(CC) $(LDFLAGS)-Map=$(@:.elf=.map) -Tlink.ld $(OBJ_EMBEBIDO) -o $(TARGET_EMBEBIDO)
+
+$(TARGET_ENSAMBLAR): $(OBJ_ENSAMBLAR)
+	$(CC) $(LDFLAGS)-Map=$(@:.elf=.map) -Tlink.ld $(OBJ_ENSAMBLAR) -o $(TARGET_ENSAMBLAR)
+
+# Flash commands for each target
+flash_embebido: $(TARGET_EMBEBIDO)
 	openocd -f openocd.cfg -c "program $< verify reset exit"
 
+flash_ensamblar: $(TARGET_ENSAMBLAR)
+	openocd -f openocd.cfg -c "program $< verify reset exit"
+
+# Clean up objects and targets
 clean:
-	rm -f $(OBJ_MAIN) $(OBJ_MAIN) $(TARGET_MAIN) $(TARGET_MAIN) $(TARGET_MAIN:.elf=.map)
+	rm -f $(OBJ_EMBEBIDO) $(OBJ_ENSAMBLAR) $(TARGET_EMBEBIDO) $(TARGET_ENSAMBLAR) $(TARGET_EMBEBIDO:.elf=.map) $(TARGET_ENSAMBLAR:.elf=.map)
