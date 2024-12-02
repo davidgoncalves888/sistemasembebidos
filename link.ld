@@ -76,5 +76,7 @@ SECTIONS
     } > RAM
 
     . = ALIGN(4);
+    _bss_end = .;
     _end = . ;
+    end = . ;
 }

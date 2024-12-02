@@ -3,9 +3,15 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="CMakePresetLoader"><![CDATA[{
-  "useNewFormat": true
-}]]></component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
   <component name="CMakeRunConfigurationManager">
     <generated>
       <config projectName="sistemasembebidos" targetName="sistemasembebidos" />
@@ -17,8 +23,19 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="862a57c2-7b8a-402c-8a1a-e04363edad4d" name="Changes" comment="Práctica 3 esqueleto">
-      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+    <list default="true" id="862a57c2-7b8a-402c-8a1a-e04363edad4d" name="Changes" comment="Update readme">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/drivers_EMB/lcd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drivers_EMB/lcd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drivers_ENS/My_Div2.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drivers_ENS/lcd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/drivers_ENS/lcd.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/link.ld" beforeDir="false" afterPath="$PROJECT_DIR$/link.ld" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reverse_int.s" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,17 +46,131 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="davidgoncalves888 &lt;david.goncalves.alvarez@udc.es&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Práctica3" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;davidgoncalves888&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:davidgoncalves888/sistemasembebidos.git&quot;,
+    &quot;accountId&quot;: &quot;cb4c2fcd-e862-48f2-a395-d90586209b2d&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2oQgL4mY6qYuG6Lrzaa8AlRRBp0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Makefile Target.FRDM-KL46Z4.executor&quot;: &quot;Run&quot;,
+    &quot;Makefile Target.clean.executor&quot;: &quot;Run&quot;,
+    &quot;Makefile Target.flash.executor&quot;: &quot;Run&quot;,
+    &quot;Makefile Target.flash_embebido.executor&quot;: &quot;Run&quot;,
+    &quot;Makefile Target.flash_ensamblar.executor&quot;: &quot;Run&quot;,
+    &quot;Makefile Target.flash_hello.executor&quot;: &quot;Run&quot;,
+    &quot;Makefile Target.flash_led.executor&quot;: &quot;Run&quot;,
+    &quot;Makefile Target.flash_main.executor&quot;: &quot;Run&quot;,
+    &quot;Makefile Target.flash_prueba.executor&quot;: &quot;Run&quot;,
+    &quot;Makefile Target.main.elf.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.west.config.association.type.startup.service&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/davidgoncalvesalvarez/Documents/Uni/7-SE/sistemasembebidos/includes&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;structure.view.defaults.are.configured&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/includes" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Makefile Target.flash_main">
     <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
+    <configuration name="clean" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/makefile" target="clean" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <configuration name="flash_embebido" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/makefile" target="flash_embebido" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <configuration name="flash_ensamblar" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/makefile" target="flash_ensamblar" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <configuration name="flash_hello" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/makefile" target="flash_hello" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <configuration name="flash_main" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/makefile" target="flash_main" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Makefile Target.flash_hello" />
+      <item itemvalue="Makefile Target.flash_embebido" />
+      <item itemvalue="Makefile Target.flash_ensamblar" />
+      <item itemvalue="Makefile Target.clean" />
+      <item itemvalue="Makefile Target.flash_main" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Makefile Target.flash_main" />
+        <item itemvalue="Makefile Target.clean" />
+        <item itemvalue="Makefile Target.flash_hello" />
+        <item itemvalue="Makefile Target.flash_ensamblar" />
+        <item itemvalue="Makefile Target.flash_embebido" />
+      </list>
+    </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="862a57c2-7b8a-402c-8a1a-e04363edad4d" name="Changes" comment="" />
@@ -56,7 +187,15 @@
       <workItem from="1729271531873" duration="1262000" />
       <workItem from="1729435350521" duration="367000" />
       <workItem from="1729435914239" duration="16000" />
-      <workItem from="1729435964985" duration="135000" />
+      <workItem from="1729435964985" duration="17821000" />
+      <workItem from="1730807155729" duration="15641000" />
+      <workItem from="1730843688860" duration="617000" />
+      <workItem from="1731938662713" duration="5300000" />
+      <workItem from="1731951352543" duration="634000" />
+      <workItem from="1732095263138" duration="575000" />
+      <workItem from="1732458738995" duration="69000" />
+      <workItem from="1732458815239" duration="20586000" />
+      <workItem from="1733145066142" duration="6268000" />
     </task>
     <task id="LOCAL-00001" summary="Led debería encender">
       <option name="closed" value="true" />
@@ -130,11 +269,67 @@
       <option name="project" value="LOCAL" />
       <updated>1729435451507</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Práctica 3 sin interrupciones">
+      <option name="closed" value="true" />
+      <created>1729441250737</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1729441250737</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Práctica 3 interrupciones casi">
+      <option name="closed" value="true" />
+      <created>1729515695513</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1729515695513</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Práctica 3 fin">
+      <option name="closed" value="true" />
+      <created>1729522851145</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1729522851145</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Práctica 4 division">
+      <option name="closed" value="true" />
+      <created>1730820486283</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1730820486283</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Práctica 4 reverse_int">
+      <option name="closed" value="true" />
+      <created>1730843425704</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1730843425704</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Update readme">
+      <option name="closed" value="true" />
+      <created>1730844065318</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1730844065318</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.s" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticReloadCMake value="true" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="RECENT_FILTERS">
@@ -167,7 +362,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="Práctica4" />
                       </list>
                     </value>
                   </entry>
@@ -190,7 +385,13 @@
     <MESSAGE value="Práctica 2" />
     <MESSAGE value="squash! Práctica 2" />
     <MESSAGE value="Práctica 3 esqueleto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Práctica 3 esqueleto" />
+    <MESSAGE value="Práctica 3 sin interrupciones" />
+    <MESSAGE value="Práctica 3 interrupciones casi" />
+    <MESSAGE value="Práctica 3 fin" />
+    <MESSAGE value="Práctica 4 division" />
+    <MESSAGE value="Práctica 4 reverse_int" />
+    <MESSAGE value="Update readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update readme" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
