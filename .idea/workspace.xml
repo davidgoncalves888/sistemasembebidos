@@ -23,8 +23,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="862a57c2-7b8a-402c-8a1a-e04363edad4d" name="Changes" comment="Practica 5">
+    <list default="true" id="862a57c2-7b8a-402c-8a1a-e04363edad4d" name="Changes" comment="TGR 1 contador básico">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -187,7 +188,7 @@
       <workItem from="1732458815239" duration="20586000" />
       <workItem from="1733145066142" duration="8403000" />
       <workItem from="1733160497366" duration="4580000" />
-      <workItem from="1734281716551" duration="9205000" />
+      <workItem from="1734281716551" duration="12449000" />
     </task>
     <task id="LOCAL-00001" summary="Led debería encender">
       <option name="closed" value="true" />
@@ -317,7 +318,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733154755671</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="TGR 1 contador básico">
+      <option name="closed" value="true" />
+      <created>1734360075274</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1734360075274</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,7 +371,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Practica5" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -392,7 +401,8 @@
     <MESSAGE value="Práctica 4 reverse_int" />
     <MESSAGE value="Update readme" />
     <MESSAGE value="Practica 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Practica 5" />
+    <MESSAGE value="TGR 1 contador básico" />
+    <option name="LAST_COMMIT_MESSAGE" value="TGR 1 contador básico" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
