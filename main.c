@@ -1,18 +1,11 @@
 #include <stdlib.h>
-#include "FreeRTOS.h"
-#include "task.h"
-#include "queue.h"
 #include "MKL46Z4.h"
 #include "lcd.h"
 
-#define QUEUE_LENGTH 99
-#define QUEUE_ITEM_SIZE sizeof(int)
 #define SW1_NUM 3 // Derecha
 #define SW3_NUM 12 // Izquierda
-
-QueueHandle_t messageQueue;
-volatile int numProducers = 0;
-volatile int numConsumers = 0;
+volatile int ss = 0;
+volatile int aa = 0;
 
 void disable_watchdog() {
     SIM->COPC = 0;
@@ -23,40 +16,7 @@ void irclk_ini() {
     MCG->C2 = MCG_C2_IRCS(0); // 0 = 32KHZ internal reference clock; 1 = 4MHz irc
 }
 
-void updateLCD(int pendingMessages) {
-    lcd_display_time(numProducers * 10 + numConsumers, pendingMessages);
-}
-
-// Productor de datos
-void producerTask(void *pvParameters) {
-    int data;
-    while (1) {
-        if (numProducers > 0) {
-            data = rand() % 100; // Generar datos aleatorios
-            if (xQueueSend(messageQueue, &data, portMAX_DELAY) == pdPASS) {
-                updateLCD(uxQueueMessagesWaiting(messageQueue));
-            }
-            vTaskDelay(pdMS_TO_TICKS(1000 / numProducers)); // Delay en función de la cantidad de productores
-        }
-    }
-}
-
-// Consumidor de datos
-void consumerTask(void *pvParameters) {
-    int data;
-    while (1) {
-        if (numConsumers > 0) {
-            if (xQueueReceive(messageQueue, &data, portMAX_DELAY) == pdPASS) {
-                updateLCD(uxQueueMessagesWaiting(messageQueue));
-            }
-            vTaskDelay(pdMS_TO_TICKS(1000 / numConsumers)); // Delay en función de la cantidad de consumidores
-        }
-    }
-}
-
-void adjustProducersConsumers() {
-    numProducers = 4;
-    numConsumers = 1;
+void updateLCD() {
 }
 
 void switch_init() {
@@ -81,13 +41,45 @@ void switch_init() {
     NVIC_SetPriority(PORTC_PORTD_IRQn, 1);
 }
 
+void TPM0_Init(void) {
+    // Step 1: Enable MCGIRCLK (32.768 kHz)
+    MCG->C1 |= MCG_C1_IRCLKEN_MASK;  // Enable MCGIRCLK
+    MCG->C2 &= ~MCG_C2_IRCS_MASK;    // Select slow mode (32.768 kHz)
+
+    // Step 2: Select MCGIRCLK as TPM clock source
+    SIM->SOPT2 |= SIM_SOPT2_TPMSRC(3);
+
+    // Step 3: Enable TPM0 clock
+    SIM->SCGC6 |= SIM_SCGC6_TPM0_MASK;
+
+    // Step 4: Configure TPM0 for 1-second interval
+    TPM0->SC = TPM_SC_PS(5);         // Set prescaler to 32
+    TPM0->MOD = 1024 - 1;            // Set MOD for 1-second interval
+    TPM0->SC |= TPM_SC_CMOD(1);      // Start TPM
+
+    // Step 5: Enable overflow interrupt
+    TPM0->SC |= TPM_SC_TOIE_MASK;    // Enable TOF interrupt
+    NVIC_EnableIRQ(TPM0_IRQn);       // Enable NVIC for TPM0
+}
+
+// TPM0 Interrupt Handler
+void FTM0IntHandler(void) {
+    if (TPM0->STATUS & TPM_STATUS_TOF_MASK) {
+        TPM0->STATUS |= TPM_STATUS_TOF_MASK;  // Clear TOF
+        ss--;                            // Increment seconds counter
+        lcd_display_time(ss, aa);
+
+    }
+}
+
 void PORTDIntHandler(void) {
     if (PORTC->PCR[SW1_NUM] & PORT_PCR_ISF_MASK) {  // SW1 pressed (Right)
-        numConsumers >= 4 ? numConsumers = 0 : numConsumers++;
+        ss++;
+        lcd_display_time(ss, aa);
         PORTC->PCR[SW1_NUM] |= PORT_PCR_ISF_MASK;
     }
     if (PORTC->PCR[SW3_NUM] & PORT_PCR_ISF_MASK) {  // SW3 pressed (Left)
-        numProducers >= 4 ? numProducers = 0 : numProducers++;
+        TPM0_Init();
         PORTC->PCR[SW3_NUM] |= PORT_PCR_ISF_MASK;
     }
 }
@@ -97,24 +89,11 @@ int main() {
     irclk_ini();
     lcd_ini();
     switch_init();
-    lcd_display_time(0, 0);
-    messageQueue = xQueueCreate(QUEUE_LENGTH, QUEUE_ITEM_SIZE);
-    if (messageQueue == NULL) {
-        lcd_display_time(1, 1);
-        return 1;
+    lcd_display_time(ss, aa);
+
+    while (1) {
+        // Keep the program running
     }
 
-    // Crear tareas de productor y consumidor
-    xTaskCreate(producerTask, "ProducerTask", configMINIMAL_STACK_SIZE, NULL, 2, NULL);
-    xTaskCreate(consumerTask, "ConsumerTask", configMINIMAL_STACK_SIZE, NULL, 2, NULL);
-
-    // Simular cambio en productores y consumidores
-    adjustProducersConsumers();
-
-    // Iniciar el scheduler
-    vTaskStartScheduler();
-
-    // Este punto no debería alcanzarse
-    for (;;);
     return 0;
 }

@@ -3,15 +3,14 @@ CC = arm-none-eabi-gcc
 TARGET_MAIN = main.elf
 
 COMMON_SRC = startup.c \
-             $(wildcard ./drivers/*.c) \
-             $(wildcard ./FreeRTOS/*.c)
+             $(wildcard ./drivers/*.c)
 
 SRC_MAIN = $(COMMON_SRC) \
           main.c
 
 OBJ_MAIN = $(SRC_MAIN:%.c=%.o)
 
-INCLUDES = -I ./includes -I ./include -I ./FreeRTOS
+INCLUDES = -I ./includes -I ./include
 CPU = -DCPU_MKL46Z256VLL4
 
 CFLAGS = -O0 -g3 -Wall -mthumb -mcpu=cortex-m0plus $(INCLUDES) $(CPU) -c

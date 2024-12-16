@@ -23,19 +23,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="862a57c2-7b8a-402c-8a1a-e04363edad4d" name="Changes" comment="Update readme">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="862a57c2-7b8a-402c-8a1a-e04363edad4d" name="Changes" comment="Practica 5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drivers_EMB/lcd.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/drivers_EMB/lcd.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/drivers_ENS/My_Div2.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/drivers_ENS/lcd.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/drivers_ENS/lcd.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/link.ld" beforeDir="false" afterPath="$PROJECT_DIR$/link.ld" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reverse_int.s" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +44,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Práctica3" />
+        <entry key="$PROJECT_DIR$" value="Practica5" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -164,9 +154,9 @@
       <list>
         <item itemvalue="Makefile Target.flash_main" />
         <item itemvalue="Makefile Target.clean" />
-        <item itemvalue="Makefile Target.flash_hello" />
         <item itemvalue="Makefile Target.flash_ensamblar" />
         <item itemvalue="Makefile Target.flash_embebido" />
+        <item itemvalue="Makefile Target.flash_hello" />
       </list>
     </recent_temporary>
   </component>
@@ -195,7 +185,9 @@
       <workItem from="1732095263138" duration="575000" />
       <workItem from="1732458738995" duration="69000" />
       <workItem from="1732458815239" duration="20586000" />
-      <workItem from="1733145066142" duration="6268000" />
+      <workItem from="1733145066142" duration="8403000" />
+      <workItem from="1733160497366" duration="4580000" />
+      <workItem from="1734281716551" duration="9205000" />
     </task>
     <task id="LOCAL-00001" summary="Led debería encender">
       <option name="closed" value="true" />
@@ -317,7 +309,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730844065318</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Practica 5">
+      <option name="closed" value="true" />
+      <created>1733154755671</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1733154755671</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,7 +362,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Práctica4" />
+                        <option value="Practica5" />
                       </list>
                     </value>
                   </entry>
@@ -391,7 +391,8 @@
     <MESSAGE value="Práctica 4 division" />
     <MESSAGE value="Práctica 4 reverse_int" />
     <MESSAGE value="Update readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update readme" />
+    <MESSAGE value="Practica 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Practica 5" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
