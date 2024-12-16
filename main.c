@@ -115,7 +115,7 @@ void FTM0IntHandler(void) {
         if (ss <= aa) {
             flash_leds();
         }
-        lcd_display_time(ss, aa);
+        lcd_display_time(aa, ss);
 
     }
 }
@@ -127,7 +127,7 @@ void PORTDIntHandler(void) {
         } else {
             aa++;
         }
-        lcd_display_time(ss, aa);
+        lcd_display_time(aa, ss);
         PORTC->PCR[SW1_NUM] |= PORT_PCR_ISF_MASK;
     }
     if (PORTC->PCR[SW3_NUM] & PORT_PCR_ISF_MASK) {  // SW3 pressed (Left)
@@ -153,7 +153,7 @@ int main() {
     switch_init();
     led_green_init();
     led_red_init();
-    lcd_display_time(ss, aa);
+    lcd_display_time(aa, ss);
 
     while (1) {
     }
