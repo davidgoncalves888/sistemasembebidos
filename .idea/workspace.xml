@@ -23,7 +23,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="862a57c2-7b8a-402c-8a1a-e04363edad4d" name="Changes" comment="TGR 2 lectura luz" />
+    <list default="true" id="862a57c2-7b8a-402c-8a1a-e04363edad4d" name="Changes" comment="TGR 2 lectura luz">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -185,7 +188,7 @@
       <workItem from="1733145066142" duration="8403000" />
       <workItem from="1733160497366" duration="4580000" />
       <workItem from="1734281716551" duration="12866000" />
-      <workItem from="1735519855567" duration="12088000" />
+      <workItem from="1735519855567" duration="15960000" />
     </task>
     <task id="LOCAL-00001" summary="Led debería encender">
       <option name="closed" value="true" />
@@ -347,7 +350,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735581868888</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="TGR 2 lectura luz">
+      <option name="closed" value="true" />
+      <created>1735581984567</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1735581984567</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
