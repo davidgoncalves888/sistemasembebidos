@@ -196,7 +196,7 @@ void BOARD_BootClockRUN(void) {
                         &mcgConfig_BOARD_BootClockRUN.pll0Config);
     /* Configure the Internal Reference clock (MCGIRCLK). */
     CLOCK_SetInternalRefClkConfig(mcgConfig_BOARD_BootClockRUN.irclkEnableMode,
-                                  mcgConfig_BOARD_BootClockRUN.ircs,
+                                  mcgConfig_BOARD_BootClockRUN.ircs, 
                                   mcgConfig_BOARD_BootClockRUN.fcrdiv);
     /* Set the clock configuration in SIM module. */
     CLOCK_SetSimConfig(&simConfig_BOARD_BootClockRUN);

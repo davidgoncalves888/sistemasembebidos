@@ -2,14 +2,11 @@
 #include "MKL46Z4.h"
 #include "lcd.h"
 
+#define LIGHT_SENSOR_ADC_CHANNEL  (8U)
+
 #define SW1_NUM 3 // Derecha
 #define SW3_NUM 12 // Izquierda
 
-volatile int ss = 0;
-volatile int aa = 0;
-volatile bool inputingSs = true; //Controla si se está escribiendo ss o aa
-volatile bool counting = false; //Controla si ya se ha acabado de meter ss y aa
-volatile bool pauseCounting = false; //Controla si el usuario ha pausado la cuenta
 
 void disable_watchdog() {
     SIM->COPC = 0;
@@ -85,78 +82,40 @@ void switch_init() {
     NVIC_SetPriority(PORTC_PORTD_IRQn, 1);
 }
 
-void TPM0_Init(void) {
-    // Activar MCGIRCLK a (32.768 kHz)
-    MCG->C1 |= MCG_C1_IRCLKEN_MASK;  // Activar MCGIRCLK
-    MCG->C2 &= ~MCG_C2_IRCS_MASK;    // Modo (32.768 kHz)
 
-    // MCGIRCLK como reloj
-    SIM->SOPT2 |= SIM_SOPT2_TPMSRC(3);
+void ADC_Init(void) {
+    SIM->SCGC6 |= SIM_SCGC6_ADC0_MASK;
 
-    // Activar TPM0
-    SIM->SCGC6 |= SIM_SCGC6_TPM0_MASK;
+    ADC0->CFG1 = ADC_CFG1_ADICLK(0) |
+                 ADC_CFG1_MODE(1) |
+                 ADC_CFG1_ADIV(2);
 
-    // TPM0 a 1 s
-    TPM0->SC = TPM_SC_PS(5);         // Escalar a 32
-    TPM0->MOD = 1024 - 1;            // Módulo para 1 s
-    TPM0->SC |= TPM_SC_CMOD(1);      // Inicial contador
-
-    // Activar interrupciones
-    TPM0->SC |= TPM_SC_TOIE_MASK;
-    NVIC_EnableIRQ(TPM0_IRQn);
+    ADC0->SC1[0] = ADC_SC1_ADCH(31);
 }
 
-void FTM0IntHandler(void) {
-    if (TPM0->STATUS & TPM_STATUS_TOF_MASK) {
-        TPM0->STATUS |= TPM_STATUS_TOF_MASK;
-        if (ss > 0 && !pauseCounting) {
-            ss--;
-        }
-        if (ss <= aa) {
-            flash_leds();
-        }
-        lcd_display_time(aa, ss);
-
-    }
+uint16_t ADC_Read(uint8_t channel) {
+    ADC0->SC1[0] = channel;
+    while (!(ADC0->SC1[0] & ADC_SC1_COCO_MASK));
+    return ADC0->R[0];
 }
 
-void PORTDIntHandler(void) {
-    if (PORTC->PCR[SW1_NUM] & PORT_PCR_ISF_MASK) {  // SW1 pressed (Right)
-        if (inputingSs) {
-            ss++;
-        } else {
-            aa++;
-        }
-        lcd_display_time(aa, ss);
-        PORTC->PCR[SW1_NUM] |= PORT_PCR_ISF_MASK;
-    }
-    if (PORTC->PCR[SW3_NUM] & PORT_PCR_ISF_MASK) {  // SW3 pressed (Left)
-        if (inputingSs && !counting) {
-            inputingSs = false;
-        } else {
-            inputingSs = true;
-            counting = true;
-            TPM0_Init();
-        }
 
-        if (counting) {
-            pauseCounting = !pauseCounting;
-        }
-        PORTC->PCR[SW3_NUM] |= PORT_PCR_ISF_MASK;
-    }
-}
-
-int main() {
+int main(void) {
+    uint16_t light_value;
+    int light_reference;
     disable_watchdog();
     irclk_ini();
     lcd_ini();
-    switch_init();
-    led_green_init();
-    led_red_init();
-    lcd_display_time(aa, ss);
+    lcd_display_time(0, 0);
+
+    ADC_Init();
+    light_reference = ADC_Read(3);
 
     while (1) {
-    }
+        light_value = ADC_Read(3);
+        lcd_display_dec(light_value);
 
-    return 0;
+
+        for (volatile int i = 0; i < 1000000; i++);
+    }
 }
